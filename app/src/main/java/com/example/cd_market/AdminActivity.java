@@ -2,6 +2,7 @@ package com.example.cd_market;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -39,6 +40,14 @@ public class AdminActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Se agregó con éxito el juego.", Toast.LENGTH_SHORT).show();
                 Log.d("AdminActivity", "Juego agregado: " + editNombre.getText().toString());
 
+            }
+        });
+
+        buttonList.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent mostrarJuegos = new Intent(getApplicationContext(),GamesActivity.class);
+                startActivity(mostrarJuegos);
             }
         });
     }
