@@ -23,15 +23,7 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".EditGameActivity"
-            android:exported="false" />
-        <activity
-            android:name=".DeleteGameActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CreateGameActivity"
-            android:exported="false" />
+
         <activity
             android:name=".AdminActivity"
             android:exported="false" />

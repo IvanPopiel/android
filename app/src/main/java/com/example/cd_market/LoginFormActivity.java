@@ -58,6 +58,9 @@ public class LoginFormActivity extends AppCompatActivity {
                 // Redirigir a la actividad de administrador
                 Toast.makeText(this, "Bienvenido Administrador", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(LoginFormActivity.this, AdminActivity.class);
+
+                // Usamos el flag para evitar regresar a LoginFormActivity
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             } else {
                 // Redirigir a la actividad de usuario
@@ -65,10 +68,11 @@ public class LoginFormActivity extends AppCompatActivity {
                 Intent intent = new Intent(LoginFormActivity.this, UserActivity.class);
                 startActivity(intent);
             }
-            finish(); // Cierra esta actividad
+            finish(); // Esto sigue siendo necesario para cerrar la actividad actual
         } else {
             Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
         }
+
     }
 
 

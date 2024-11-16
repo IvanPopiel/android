@@ -25,6 +25,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_PASSWORD = "password";
     private static final String COLUMN_ROLE = "role";  // "user" o "admin"
 
+    private static final String TABLE_GAMES = "CREATE TABLE GAMES(ID TEXT PRIMARY KEY, Nombre TEXT, Descripcion TEXT)";
 
 
     public DatabaseHelper(Context context) {
@@ -42,9 +43,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + COLUMN_ROLE + " TEXT)";
         db.execSQL(CREATE_USERS_TABLE);
 
+        db.execSQL(TABLE_GAMES);
     }
-
-
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -118,18 +118,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return ""; // Retorna un string vacío si el usuario no existe
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
+    //juegos
+    public void addGame(String id, String nombre, String descripcion){
+        SQLiteDatabase db = getWritableDatabase();
+        if(db!=null){
+            db.execSQL("INSERT INTO GAMES VALUES('"+id+"', '"+nombre+"', '"+descripcion+"')");
+            db.close();
+        }
+    }
 
 
 }
