@@ -146,4 +146,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return games;
     }
 
+    public void buscarGames(GameModelo games, String id){
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM GAMES WHERE ID ='"+id+"'", null);
+        if(cursor.moveToFirst()){
+            do{
+                games.setNombre(cursor.getString(1));
+                games.setDescripcion(cursor.getString(2));
+            }while(cursor.moveToNext());
+        }
+
+    }
+
 }

@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class AdminActivity extends AppCompatActivity {
 
     EditText editID, editNombre, editDescripcion;
-    Button buttonAdd, buttonUpdate, buttonDelete, buttonList;
+    Button buttonAdd, buttonUpdate, buttonDelete, buttonList, buttonSearch;
 
 
 
@@ -29,7 +29,9 @@ public class AdminActivity extends AppCompatActivity {
         buttonAdd=(Button)findViewById(R.id.buttonAdd);
         buttonUpdate=(Button)findViewById(R.id.buttonUpdate);
         buttonDelete=(Button)findViewById(R.id.buttonDelete);
-        buttonList=(Button)findViewById(R.id.buttonList);
+        buttonList=(Button)findViewById(R.id.buttonList); //boton para mostrar
+        buttonSearch=(Button)findViewById(R.id.buttonSearch); //boton para buscar
+
 
         final DatabaseHelper db = new DatabaseHelper(getApplicationContext());
 
@@ -48,6 +50,16 @@ public class AdminActivity extends AppCompatActivity {
             public void onClick(View view){
                 Intent mostrarJuegos = new Intent(getApplicationContext(),GamesActivity.class);
                 startActivity(mostrarJuegos);
+            }
+        });
+
+        buttonSearch.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+               GameModelo games=new GameModelo();
+               db.buscarGames(games,editID.getText().toString());
+               editNombre.setText(games.getNombre());
+               editDescripcion.setText(games.getDescripcion());
             }
         });
     }
