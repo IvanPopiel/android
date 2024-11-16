@@ -4,24 +4,77 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <Button
-        android:id="@+id/btnCreateGame"
-        android:layout_width="wrap_content"
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:gravity="center_horizontal"
+        android:text="PANEL ADMIN - JUEGOS"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Crear Juego" />
+        android:text="ID" />
+
+    <EditText
+        android:id="@+id/editID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre" />
+
+    <EditText
+        android:id="@+id/editNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="descripcion" />
+
+    <EditText
+        android:id="@+id/editDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text" />
 
     <Button
-        android:id="@+id/btnEditGame"
-        android:layout_width="wrap_content"
+        android:id="@+id/buttonAdd"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Editar Juego" />
+        android:text="CREAR" />
 
     <Button
-        android:id="@+id/btnDeleteGame"
-        android:layout_width="wrap_content"
+        android:id="@+id/buttonUpdate"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Eliminar Juego" />
+        android:text="MODIFICAR" />
 
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ELIMINAR" />
 
+    <Button
+        android:id="@+id/buttonList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VER LISTADO" />
 
 </LinearLayout>
