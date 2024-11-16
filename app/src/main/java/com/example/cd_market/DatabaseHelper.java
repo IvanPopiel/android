@@ -9,6 +9,8 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.google.android.gms.games.Game;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -118,7 +120,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return ""; // Retorna un string vacío si el usuario no existe
     }
 
+
+
+
     //juegos
+
+
     public void addGame(String id, String nombre, String descripcion){
         SQLiteDatabase db = getWritableDatabase();
         if(db!=null){
@@ -127,5 +134,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    public List<GameModelo> mostrarGames(){
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM GAMES", null);
+        List<GameModelo> games = new ArrayList<>();
+        if(cursor.moveToFirst()){
+            do{
+                games.add(new GameModelo(cursor.getString(0), cursor.getString(1)));
+            }while(cursor.moveToNext());
+        }
+        return games;
+    }
 
 }

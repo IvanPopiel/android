@@ -21,17 +21,11 @@ public class GamesActivity extends AppCompatActivity {
         recyclerViewJuego = (RecyclerView)findViewById(R.id.recyclerJuego);
         recyclerViewJuego.setLayoutManager(new LinearLayoutManager(this));
 
-        adaptadorJuego = new GameAdaptador(obtenerJuegos());
+
+        DatabaseHelper db = new DatabaseHelper(getApplicationContext());
+        adaptadorJuego = new GameAdaptador(db.mostrarGames());
         recyclerViewJuego.setAdapter(adaptadorJuego);
     }
 
-    public List<GameModelo> obtenerJuegos(){
-        List<GameModelo> juego = new ArrayList<>();
-        juego.add(new GameModelo("assassins creed", "tercera entrega"));
-        juego.add(new GameModelo("assassins creed 2", "segunda entrega"));
-        juego.add(new GameModelo("assassins creed 4", "cuarta entrega"));
-        juego.add(new GameModelo("assassins creed 5", "quinta entrega"));
 
-        return juego;
-    }
 }
