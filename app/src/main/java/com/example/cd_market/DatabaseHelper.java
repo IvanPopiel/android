@@ -5,11 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
-
-import androidx.annotation.NonNull;
-
-import com.google.android.gms.games.Game;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -156,6 +151,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }while(cursor.moveToNext());
         }
 
+    }
+
+    public void editGame(String id, String nombre, String descripcion){
+        SQLiteDatabase db = getWritableDatabase();
+        if(db!=null){
+            db.execSQL("UPDATE GAMES SET NOMBRE='"+nombre+"',DESCRIPCION='"+descripcion+"' WHERE ID='"+id+"'");
+            db.close();
+        }
+    }
+
+    public void deleteGame(String id){
+        SQLiteDatabase db = getWritableDatabase();
+        if(db!=null){
+            db.execSQL("DELETE FROM GAMES WHERE ID='"+id+"'");
+            db.close();
+        }
     }
 
 }

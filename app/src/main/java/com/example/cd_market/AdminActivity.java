@@ -40,7 +40,6 @@ public class AdminActivity extends AppCompatActivity {
             public void onClick(View view) {
                 db.addGame(editID.getText().toString(), editNombre.getText().toString(), editDescripcion.getText().toString());
                 Toast.makeText(getApplicationContext(), "Se agregó con éxito el juego.", Toast.LENGTH_SHORT).show();
-                Log.d("AdminActivity", "Juego agregado: " + editNombre.getText().toString());
 
             }
         });
@@ -62,5 +61,22 @@ public class AdminActivity extends AppCompatActivity {
                editDescripcion.setText(games.getDescripcion());
             }
         });
+
+        buttonUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db.editGame(editID.getText().toString(), editNombre.getText().toString(), editDescripcion.getText().toString());
+                Toast.makeText(getApplicationContext(), "Los datos han sido actualizados", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        buttonDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db.deleteGame(editID.getText().toString());
+                Toast.makeText(getApplicationContext(), "Juego eliminado exitosamente", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }
