@@ -47,6 +47,17 @@
             android:name=".LoginFormActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".AdminOptionsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".UsersActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".AdminUsersActivity"
+            android:exported="false" />
         <!-- MainActivity se desactiva porque parece que no la necesitas -->
         <activity
             android:name=".MainActivity"

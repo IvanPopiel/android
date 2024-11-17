@@ -169,4 +169,50 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+
+
+    //usuarios - ABM
+
+
+
+    public void buscarUser(UserModelo users, String id){
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM USERS WHERE ID ='"+id+"'", null);
+        if(cursor.moveToFirst()){
+            do{
+                users.settNombreUsuario(cursor.getString(1));
+                users.setEmail(cursor.getString(2));
+            }while(cursor.moveToNext());
+        }
+
+    }
+
+    public void editUser(String id, String username, String email) {
+        SQLiteDatabase db = getWritableDatabase();
+        if (db != null) {
+            // Aquí se está actualizando la tabla 'users' y los campos 'username' y 'email'
+            db.execSQL("UPDATE users SET username='" + username + "', email='" + email + "' WHERE id='" + id + "'");
+            db.close();
+        }
+    }
+
+
+    public void deleteUser(String id){
+        SQLiteDatabase db = getWritableDatabase();
+        if(db!=null){
+            db.execSQL("DELETE FROM USERS WHERE ID='"+id+"'");
+            db.close();
+        }
+    }
+    public List<UserModelo> mostrarUsuarios() {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM USERS", null);
+        List<UserModelo> users = new ArrayList<>();
+        if(cursor.moveToFirst()){
+            do{
+                users.add(new UserModelo(cursor.getString(0), cursor.getString(1)));
+            }while(cursor.moveToNext());
+        }
+        return users;
+    }
 }

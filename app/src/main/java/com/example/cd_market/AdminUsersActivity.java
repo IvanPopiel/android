@@ -4,14 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class AdminActivity extends AppCompatActivity {
+public class AdminUsersActivity extends AppCompatActivity {
 
-    EditText editID, editNombre, editDescripcion;
+    EditText editID, editNombreUsuario, editEmail;
     Button buttonAdd, buttonUpdate, buttonDelete, buttonList, buttonSearch;
 
 
@@ -20,12 +21,11 @@ public class AdminActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin);
+        setContentView(R.layout.activity_admin_users);
 
         editID=(EditText)findViewById(R.id.editID);
-        editNombre=(EditText)findViewById(R.id.editNombreUsuario);
-        editDescripcion=(EditText)findViewById(R.id.editEmail);
-        buttonAdd=(Button)findViewById(R.id.buttonAdd);
+        editNombreUsuario=(EditText)findViewById(R.id.editNombreUsuario);
+        editEmail=(EditText)findViewById(R.id.editEmail);
         buttonUpdate=(Button)findViewById(R.id.buttonUpdate);
         buttonDelete=(Button)findViewById(R.id.buttonDelete);
         buttonList=(Button)findViewById(R.id.buttonList); //boton para mostrar
@@ -34,37 +34,30 @@ public class AdminActivity extends AppCompatActivity {
 
         final DatabaseHelper db = new DatabaseHelper(getApplicationContext());
 
-        buttonAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                db.addGame(editID.getText().toString(), editNombre.getText().toString(), editDescripcion.getText().toString());
-                Toast.makeText(getApplicationContext(), "Se agregó con éxito el juego.", Toast.LENGTH_SHORT).show();
 
-            }
-        });
 
         buttonList.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent mostrarJuegos = new Intent(getApplicationContext(),GamesActivity.class);
-                startActivity(mostrarJuegos);
+                Intent mostrarUsuarios = new Intent(getApplicationContext(),UsersActivity.class);
+                startActivity(mostrarUsuarios);
             }
         });
 
         buttonSearch.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-               GameModelo games=new GameModelo();
-               db.buscarGames(games,editID.getText().toString());
-               editNombre.setText(games.getNombre());
-               editDescripcion.setText(games.getDescripcion());
+                UserModelo users=new UserModelo();
+                db.buscarUser(users,editID.getText().toString());
+                editNombreUsuario.setText(users.getNombreUsuario());
+                editEmail.setText(users.getEmail());
             }
         });
 
         buttonUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                db.editGame(editID.getText().toString(), editNombre.getText().toString(), editDescripcion.getText().toString());
+                db.editUser(editID.getText().toString(), editNombreUsuario.getText().toString(), editEmail.getText().toString());
                 Toast.makeText(getApplicationContext(), "Los datos han sido actualizados", Toast.LENGTH_SHORT).show();
             }
         });
@@ -72,8 +65,8 @@ public class AdminActivity extends AppCompatActivity {
         buttonDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                db.deleteGame(editID.getText().toString());
-                Toast.makeText(getApplicationContext(), "Juego eliminado exitosamente", Toast.LENGTH_SHORT).show();
+                db.deleteUser(editID.getText().toString());
+                Toast.makeText(getApplicationContext(), "usuario eliminado exitosamente", Toast.LENGTH_SHORT).show();
             }
         });
 

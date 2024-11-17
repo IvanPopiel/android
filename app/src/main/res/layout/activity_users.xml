@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.cd_market.GamesActivity">
+    tools:context="com.example.cd_market.UsersActivity">
 
     <!-- RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerJuego"
+        android:id="@+id/recyclerUsuario"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

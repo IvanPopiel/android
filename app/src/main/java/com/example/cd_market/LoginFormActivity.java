@@ -57,7 +57,7 @@ public class LoginFormActivity extends AppCompatActivity {
             if (role.equalsIgnoreCase("Administrador")) {
                 // Redirigir a la actividad de administrador
                 Toast.makeText(this, "Bienvenido Administrador", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(LoginFormActivity.this, AdminActivity.class);
+                Intent intent = new Intent(LoginFormActivity.this, AdminOptionsActivity.class);
 
                 // Usamos el flag para evitar regresar a LoginFormActivity
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
