@@ -1,10 +1,13 @@
 package com.example.cd_market;
 
 public class UserModelo {
+    private int id;
+    private String nombreUsuario;
+    private String email;
 
-    private String nombreUsuario, email;
-
-    public UserModelo(String nombreUsuario, String email) {
+    // Constructor
+    public UserModelo(int id, String nombreUsuario, String email) {
+        this.id = id;
         this.nombreUsuario = nombreUsuario;
         this.email = email;
     }
@@ -12,16 +15,26 @@ public class UserModelo {
     public UserModelo() {
     }
 
+    // Getters y Setters
+    public int getId() {
+        return id;
+    }
+
     public String getNombreUsuario() {
         return nombreUsuario;
     }
 
-    public void settNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
-    }
-
     public String getEmail() {
         return email;
+    }
+
+    // Setters
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
     }
 
     public void setEmail(String email) {

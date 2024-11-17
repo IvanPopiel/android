@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,8 +23,8 @@ public class AdminUsersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_users);
 
         editID=(EditText)findViewById(R.id.editID);
-        editNombreUsuario=(EditText)findViewById(R.id.editNombreUsuario);
-        editEmail=(EditText)findViewById(R.id.editEmail);
+        editNombreUsuario=(EditText)findViewById(R.id.editNombre);
+        editEmail=(EditText)findViewById(R.id.editDescripcion);
         buttonUpdate=(Button)findViewById(R.id.buttonUpdate);
         buttonDelete=(Button)findViewById(R.id.buttonDelete);
         buttonList=(Button)findViewById(R.id.buttonList); //boton para mostrar

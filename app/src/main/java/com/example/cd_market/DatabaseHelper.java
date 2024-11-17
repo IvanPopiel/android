@@ -135,7 +135,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         List<GameModelo> games = new ArrayList<>();
         if(cursor.moveToFirst()){
             do{
-                games.add(new GameModelo(cursor.getString(0), cursor.getString(1)));
+                games.add(new GameModelo(cursor.getInt(0), cursor.getString(1), cursor.getString(2)));
             }while(cursor.moveToNext());
         }
         return games;
@@ -180,7 +180,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("SELECT * FROM USERS WHERE ID ='"+id+"'", null);
         if(cursor.moveToFirst()){
             do{
-                users.settNombreUsuario(cursor.getString(1));
+                users.setNombreUsuario(cursor.getString(1));
                 users.setEmail(cursor.getString(2));
             }while(cursor.moveToNext());
         }
@@ -210,7 +210,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         List<UserModelo> users = new ArrayList<>();
         if(cursor.moveToFirst()){
             do{
-                users.add(new UserModelo(cursor.getString(0), cursor.getString(1)));
+                users.add(new UserModelo(cursor.getInt(0), cursor.getString(1),  cursor.getString(2)));
             }while(cursor.moveToNext());
         }
         return users;

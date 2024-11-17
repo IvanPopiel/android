@@ -5,17 +5,27 @@
     android:orientation="vertical"
     android:padding="8dp">
 
+    <!-- Mostrar ID del Usuario -->
+    <TextView
+        android:id="@+id/idUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID del Usuario"
+        android:textSize="16sp" />
+
+    <!-- Mostrar Nombre de Usuario -->
     <TextView
         android:id="@+id/nombreUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Game Name"
+        android:text="Nombre del Usuario"
         android:textSize="16sp" />
 
+    <!-- Mostrar Email del Usuario -->
     <TextView
         android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Game Description"
+        android:text="Email del Usuario"
         android:textSize="14sp" />
 </LinearLayout>

@@ -23,8 +23,8 @@ public class AdminActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin);
 
         editID=(EditText)findViewById(R.id.editID);
-        editNombre=(EditText)findViewById(R.id.editNombreUsuario);
-        editDescripcion=(EditText)findViewById(R.id.editEmail);
+        editNombre=(EditText)findViewById(R.id.editNombre);
+        editDescripcion=(EditText)findViewById(R.id.editDescripcion);
         buttonAdd=(Button)findViewById(R.id.buttonAdd);
         buttonUpdate=(Button)findViewById(R.id.buttonUpdate);
         buttonDelete=(Button)findViewById(R.id.buttonDelete);
