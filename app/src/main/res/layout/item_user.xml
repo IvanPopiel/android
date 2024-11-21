@@ -11,7 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ID del Usuario"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:textColor="@android:color/white" />
 
     <!-- Mostrar Nombre de Usuario -->
     <TextView
@@ -19,7 +20,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nombre del Usuario"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:textColor="@android:color/white" />
 
     <!-- Mostrar Email del Usuario -->
     <TextView
@@ -27,5 +29,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email del Usuario"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:textColor="@android:color/white" />
 </LinearLayout>

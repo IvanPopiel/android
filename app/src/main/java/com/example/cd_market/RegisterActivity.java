@@ -24,7 +24,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        // Inicialización de vistas
+
         edtUsername = findViewById(R.id.edtUsername);
         edtEmail = findViewById(R.id.edtEmail);
         edtPassword = findViewById(R.id.edtPassword);
@@ -32,10 +32,8 @@ public class RegisterActivity extends AppCompatActivity {
         radioGroupRole = findViewById(R.id.radioGroupRole);
         btnRegister = findViewById(R.id.btnRegister);
 
-        // Inicializamos la base de datos
         databaseHelper = new DatabaseHelper(this);
 
-        // Configuramos el botón de registro
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,7 +43,6 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void registerUser() {
-        // Obtener los datos ingresados por el usuario
         String username = edtUsername.getText().toString().trim();
         String email = edtEmail.getText().toString().trim();
         String password = edtPassword.getText().toString().trim();
@@ -90,7 +87,7 @@ public class RegisterActivity extends AppCompatActivity {
         // Verificar si el registro fue exitoso
         if (isRegistered) {
             Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show();
-            finish();  // Cierra la actividad después del registro exitoso
+            finish();
         } else {
             Toast.makeText(this, "Error al registrar el usuario. Inténtalo de nuevo.", Toast.LENGTH_SHORT).show();
         }

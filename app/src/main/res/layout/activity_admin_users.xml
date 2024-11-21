@@ -4,22 +4,26 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-
+    <!-- Título principal -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="42dp"
         android:gravity="center_horizontal"
-        android:text="PANEL ADMIN - USUARIOS"
+        android:text="@string/panel_admin_usuarios"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        style="@style/CustomTextViewStyle" /> <!-- Aplicando el estilo -->
 
+    <!-- Texto para el ID -->
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ID" />
+        android:text="@string/label_id"
+        style="@style/CustomTextViewStyle" />
 
+    <!-- LinearLayout para el campo de ID y el botón de búsqueda -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,14 +41,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="BUSCAR" />
+            android:text="@string/boton_buscar" />
     </LinearLayout>
 
+    <!-- Texto para Nombre de Usuario -->
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nombre de usuario" />
+        android:text="@string/label_nombre_usuario"
+        style="@style/CustomTextViewStyle" />
 
     <EditText
         android:id="@+id/editNombre"
@@ -53,11 +59,13 @@
         android:ems="10"
         android:inputType="text" />
 
+    <!-- Texto para Email de Usuario -->
     <TextView
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email de usuario" />
+        android:text="@string/label_email_usuario"
+        style="@style/CustomTextViewStyle" />
 
     <EditText
         android:id="@+id/editDescripcion"
@@ -66,22 +74,25 @@
         android:ems="10"
         android:inputType="text" />
 
+    <!-- Botón de Modificar -->
     <Button
         android:id="@+id/buttonUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MODIFICAR" />
+        android:text="@string/boton_modificar" />
 
+    <!-- Botón de Eliminar -->
     <Button
         android:id="@+id/buttonDelete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ELIMINAR" />
+        android:text="@string/boton_eliminar" />
 
+    <!-- Botón de Ver Listado -->
     <Button
         android:id="@+id/buttonList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="VER LISTADO" />
+        android:text="@string/boton_ver_listado" />
 
 </LinearLayout>

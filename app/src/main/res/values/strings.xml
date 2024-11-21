@@ -1,3 +1,60 @@
 <resources>
-    <string name="app_name">cd_market</string>
+    <string name="app_name">CD MARKET</string>
+
+    <!-- activity_admin.xml -->
+
+    <!-- Títulos y etiquetas -->
+    <string name="titulo_panel_admin">PANEL ADMIN - JUEGOS</string>
+    <string name="etiqueta_id">ID</string>
+    <string name="etiqueta_nombre">Nombre</string>
+    <string name="etiqueta_descripcion">Descripción</string>
+
+    <!-- Botones -->
+    <string name="boton_crear">CREAR</string>
+    <string name="boton_modificar">MODIFICAR</string>
+    <string name="boton_eliminar">ELIMINAR</string>
+    <string name="boton_ver_listado">VER LISTADO</string>
+    <string name="boton_buscar">BUSCAR</string>
+
+    <!-- activity_admin_options -->
+
+    <!-- Botones -->
+    <string name="boton_crud_juegos">CRUD JUEGOS</string>
+    <string name="boton_crud_usuarios">CRUD USUARIOS</string>
+
+    <!-- activity_admin_users -->
+
+    <!-- Títulos y etiquetas -->
+    <string name="panel_admin_usuarios">PANEL ADMIN - USUARIOS</string>
+    <string name="label_id">ID</string>
+    <string name="label_nombre_usuario">Nombre de usuario</string>
+    <string name="label_email_usuario">Email de usuario</string>
+
+
+    <!-- activity_login -->
+
+    <!-- Botones -->
+    <string name="btn_iniciar_sesion">Iniciar sesión</string>
+    <string name="btn_registrarse">Registrarse</string>
+
+    <!-- activity_login_form -->
+
+    <!-- Hint para los EditText -->
+    <string name="hint_nombre_usuario">Nombre de usuario</string>
+    <string name="hint_contrasena">Contraseña</string>
+
+
+    <!-- activity_register -->
+
+    <!-- Hints para los campos -->
+    <string name="hint_correo_electronico">Correo electrónico</string>
+    <string name="hint_confirmar_contrasena">Confirmar contraseña</string>
+
+    <!-- Opciones de RadioButton -->
+    <string name="radio_usuario_comun">Usuario Común</string>
+    <string name="radio_administrador">Administrador</string>
+
+    <!-- Botón de Registro -->
+    <string name="btn_registrar">Registrar</string>
+
 </resources>

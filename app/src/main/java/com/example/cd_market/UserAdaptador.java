@@ -16,10 +16,9 @@ public class UserAdaptador extends RecyclerView.Adapter<UserAdaptador.ViewHolder
 
         public ViewHolder(View itemView) {
             super(itemView);
-            // Inicializamos los TextViews
-            idUsuario = itemView.findViewById(R.id.idUsuario);  // ID del Usuario
-            nombreUsuario = itemView.findViewById(R.id.nombreUsuario);  // Nombre de Usuario
-            email = itemView.findViewById(R.id.email);  // Email del Usuario
+            idUsuario = itemView.findViewById(R.id.idUsuario);
+            nombreUsuario = itemView.findViewById(R.id.nombreUsuario);
+            email = itemView.findViewById(R.id.email);
         }
     }
 
@@ -31,18 +30,18 @@ public class UserAdaptador extends RecyclerView.Adapter<UserAdaptador.ViewHolder
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // Infla el layout del ítem
+
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_user, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        // Establece los valores de los elementos del ítem
+
         UserModelo user = usuariosLista.get(position);
-        holder.idUsuario.setText(String.valueOf(user.getId()));  // Muestra el ID
-        holder.nombreUsuario.setText(user.getNombreUsuario());  // Muestra el Nombre
-        holder.email.setText(user.getEmail());  // Muestra el Email
+        holder.idUsuario.setText(String.valueOf(user.getId()));
+        holder.nombreUsuario.setText(user.getNombreUsuario());
+        holder.email.setText(user.getEmail());
     }
 
     @Override

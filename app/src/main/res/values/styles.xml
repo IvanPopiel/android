@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- Tema personalizado -->
+    <style name="Theme.CustomTheme" parent="Theme.Material3.DayNight">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryVariant">@color/color_primary_variant</item>
+        <item name="colorSecondary">@color/color_secondary</item>
+        <item name="android:colorBackground">@color/color_background</item>
+        <item name="buttonStyle">@style/CustomButtonStyle</item>
+        <item name="android:textColorPrimary">@color/color_button_text</item> <!-- Color predeterminado del texto -->
+        <item name="android:textColorSecondary">@color/color_secondary</item> <!-- Color secundario del texto -->
+    </style>
+
+    <!-- Estilo de botón personalizado -->
+    <style name="CustomButtonStyle" parent="Widget.Material3.Button">
+        <item name="android:background">@drawable/rounded_button</item> <!-- Fondo con esquinas redondeadas -->
+        <item name="android:textColor">@color/color_button_text</item> <!-- Color del texto -->
+        <item name="android:elevation">4dp</item> <!-- Sombra -->
+        <item name="android:padding">12dp</item> <!-- Espaciado interno -->
+    </style>
+
+    <!-- Estilo de EditText personalizado -->
+    <style name="CustomEditTextStyle" parent="Widget.Material3.TextInputEditText.FilledBox">
+        <item name="android:textColorHint">@color/color_hint</item> <!-- Color del hint -->
+        <item name="android:textColor">@color/color_button_text</item> <!-- Color del texto -->
+        <item name="android:backgroundTint">@color/color_background</item> <!-- Fondo del EditText -->
+    </style>
+
+    <!-- Estilo de TextView personalizado -->
+    <style name="CustomTextViewStyle">
+        <item name="android:textColor">@color/color_button_text</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <!-- Estilo de TextInputLayout con fondo y color del hint -->
+    <style name="CustomTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">@color/color_background</item> <!-- Fondo -->
+        <item name="android:textColorHint">@color/color_hint</item> <!-- Color del hint -->
+        <item name="boxStrokeColor">@color/color_primary</item> <!-- Color del borde -->
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+    </style>
+
+</resources>

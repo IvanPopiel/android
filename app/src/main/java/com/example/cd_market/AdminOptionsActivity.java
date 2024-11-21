@@ -16,7 +16,6 @@ public class AdminOptionsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_options);
 
-        // Asignar los botones
         buttonJuegos = findViewById(R.id.buttonJuegos);
         buttonUsuarios = findViewById(R.id.buttonUsuarios);
 

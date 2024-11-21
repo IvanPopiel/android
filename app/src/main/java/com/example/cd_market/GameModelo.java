@@ -12,7 +12,7 @@ public class GameModelo {
         this.descripcion = descripcion;
     }
 
-    // Constructor sin parámetros (por si necesitas crear objetos vacíos)
+
     public GameModelo() {
         this.id = 0;
         this.nombre = "";

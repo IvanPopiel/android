@@ -64,7 +64,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         long result = db.insert(TABLE_USERS, null, values);
         db.close();
 
-        // Si result > 0, significa que la inserción fue exitosa
         return result != -1;
     }
 
@@ -190,7 +189,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void editUser(String id, String username, String email) {
         SQLiteDatabase db = getWritableDatabase();
         if (db != null) {
-            // Aquí se está actualizando la tabla 'users' y los campos 'username' y 'email'
             db.execSQL("UPDATE users SET username='" + username + "', email='" + email + "' WHERE id='" + id + "'");
             db.close();
         }

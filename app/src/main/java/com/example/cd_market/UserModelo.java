@@ -15,7 +15,6 @@ public class UserModelo {
     public UserModelo() {
     }
 
-    // Getters y Setters
     public int getId() {
         return id;
     }
@@ -28,7 +27,7 @@ public class UserModelo {
         return email;
     }
 
-    // Setters
+
     public void setId(int id) {
         this.id = id;
     }

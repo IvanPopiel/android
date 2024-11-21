@@ -20,15 +20,12 @@ public class LoginFormActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_form);
 
-        // Inicialización de vistas
         edtUsername = findViewById(R.id.edtUsername);
         edtPassword = findViewById(R.id.edtPassword);
         btnLogin = findViewById(R.id.btnLogin);
 
-        // Inicializamos la base de datos
         databaseHelper = new DatabaseHelper(this);
 
-        // Configuramos el botón de login
         btnLogin.setOnClickListener(v -> loginUser());
     }
 
@@ -68,7 +65,7 @@ public class LoginFormActivity extends AppCompatActivity {
                 Intent intent = new Intent(LoginFormActivity.this, UserActivity.class);
                 startActivity(intent);
             }
-            finish(); // Esto sigue siendo necesario para cerrar la actividad actual
+            finish();
         } else {
             Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
         }

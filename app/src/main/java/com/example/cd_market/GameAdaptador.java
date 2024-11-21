@@ -33,14 +33,12 @@ public class GameAdaptador extends RecyclerView.Adapter<GameAdaptador.ViewHolder
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // Inflamos el layout de cada item
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_game, parent, false);
         return new ViewHolder(view);  // Retornamos el ViewHolder
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        // Establecemos los valores de los TextViews para cada item
         GameModelo juego = juegoLista.get(position);
         holder.id.setText(String.valueOf(juego.getId()));  // Mostrar ID
         holder.nombre.setText(juego.getNombre());         // Mostrar nombre
