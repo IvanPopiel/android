@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -120,13 +121,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //juegos
 
 
-    public void addGame(String id, String nombre, String descripcion){
+    public void addGame(String id, String nombre, String descripcion) {
+        if (gameExists(id)) {
+            // Aquí no necesitas el contexto, solo realizar la lógica
+            return; // No se agrega el juego
+        }
+
+        // Si el juego no existe, procedemos con la inserción
         SQLiteDatabase db = getWritableDatabase();
-        if(db!=null){
-            db.execSQL("INSERT INTO GAMES VALUES('"+id+"', '"+nombre+"', '"+descripcion+"')");
+        if (db != null) {
+            db.execSQL("INSERT INTO GAMES (ID, NOMBRE, DESCRIPCION) VALUES(?, ?, ?)", new Object[]{id, nombre, descripcion});
             db.close();
         }
     }
+
+
+
+
 
     public List<GameModelo> mostrarGames(){
         SQLiteDatabase db = getReadableDatabase();
@@ -167,6 +178,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
         }
     }
+
+    public boolean gameExists(String id) {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM GAMES WHERE ID = ?", new String[]{id});
+        boolean exists = cursor.getCount() > 0; // Si el conteo de filas es mayor a 0, el juego ya existe
+        cursor.close();
+        return exists;
+    }
+
 
 
 

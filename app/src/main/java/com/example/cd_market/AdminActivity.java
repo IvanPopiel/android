@@ -43,20 +43,34 @@ public class AdminActivity extends AppCompatActivity {
                 executorService.execute(new Runnable() {
                     @Override
                     public void run() {
-                        // Realizar la operación de agregar el juego en la base de datos
-                        db.addGame(editID.getText().toString(), editNombre.getText().toString(), editDescripcion.getText().toString());
+                        // Verificar si el juego ya existe
+                        boolean gameExists = db.gameExists(editID.getText().toString());
 
-                        // Después de agregar, actualizar la UI
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                Toast.makeText(getApplicationContext(), "Se agregó con éxito el juego.", Toast.LENGTH_SHORT).show();
-                            }
-                        });
+                        // Si el juego existe, mostrar un mensaje de error
+                        if (gameExists) {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(getApplicationContext(), "El juego con este ID ya existe", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                        } else {
+                            // Si no existe, agregar el juego
+                            db.addGame(editID.getText().toString(), editNombre.getText().toString(), editDescripcion.getText().toString());
+
+                            // Mostrar mensaje de éxito
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(getApplicationContext(), "Se agregó con éxito el juego.", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                        }
                     }
                 });
             }
         });
+
 
         // Mostrar lista de juegos
         buttonList.setOnClickListener(new View.OnClickListener() {
